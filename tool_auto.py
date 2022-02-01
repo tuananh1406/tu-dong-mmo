@@ -7,12 +7,12 @@ import logging
 from datetime import datetime
 
 from configparser import ConfigParser
-from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 import sentry_sdk
 
 import requests
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -28,7 +28,8 @@ class CustomLogFilter(logging.Filter):
 
 EXTRA = dict(cookies_name=None)
 TESTING = None
-URL = 'https://www.facebook.com/'
+# URL = 'https://gleam.io/L8Tok/lixinft-giveaway'
+URL = 'https://share-w.in/hq1d4a-47546'
 NAME = 'tool_auto'
 
 
@@ -90,11 +91,14 @@ def tam_ngung_va_tim(driver, _xpath):
 def chay_trinh_duyet(headless=True):
     '''Mở trình duyệt và trả về driver
     '''
-    options = Options()
+    options = webdriver.ChromeOptions()
     options.headless = headless
-    service = Service(GeckoDriverManager().install())
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    service = Service(ChromeDriverManager().install())
     LOGGER.info('Chạy trình duyệt, headless=%s', headless)
-    _driver = webdriver.Firefox(
+    _driver = webdriver.Chrome(
         options=options,
         service=service,
     )
