@@ -1,0 +1,11 @@
+2022-02-01 14:42:13,665 - tool_auto - INFO - Chạy chương trình
+2022-02-01 14:42:13,665 - tool_auto - INFO - Load config
+2022-02-01 14:42:43,270 - tool_auto - INFO - Chạy chương trình
+2022-02-01 14:42:43,271 - tool_auto - INFO - Load config
+2022-02-01 14:42:43,271 - tool_auto - INFO - Gửi thông báo qua telegram
+2022-02-01 14:42:45,658 - tool_auto - INFO - **************************************************
+2022-02-01 14:42:45,658 - tool_auto - INFO - Chạy thử chương trình
+2022-02-01 14:42:45,659 - tool_auto - INFO - **************************************************
+2022-02-01 14:42:46,724 - tool_auto - INFO - Chạy trình duyệt, headless=False
+2022-02-01 14:42:50,118 - tool_auto - INFO - Mở trang web
+2022-02-01 14:42:51,795 - tool_auto - INFO - Thời gian xử lý: 0:00:08.523641
