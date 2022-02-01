@@ -2,6 +2,7 @@
 # coding: utf-8
 '''Tự động đăng nhập facebook
 '''
+import os
 import logging
 
 from datetime import datetime
@@ -118,23 +119,23 @@ def mo_website(_driver, url):
 
 
 if __name__ == '__main__':
+    THOI_GIAN_HIEN_TAI = datetime.now()
     LOGGER = thiet_lap_logging(NAME)
     LOGGER.info('Chạy chương trình')
 
-    LOGGER.info('Load config')
-    CONFIG = ConfigParser()
-    CONFIG.read('tele.conf')
-    BOT_TELE = CONFIG.get('config', 'BOT_TELE')
-    CHAT_ID = CONFIG.get('config', 'CHAT_ID')
-
-    THOI_GIAN_HIEN_TAI = datetime.now()
-    LOGGER.info('Gửi thông báo qua telegram')
-    tele_url = f'https://api.telegram.org/bot{BOT_TELE}/sendMessage'
-    params = {
-        'chat_id': CHAT_ID,
-        'text': f'Chạy tool auto: {THOI_GIAN_HIEN_TAI}',
-    }
-    requests.post(url=tele_url, data=params)
+    if os.path.isexists('tele.conf'):
+        LOGGER.info('Load config')
+        CONFIG = ConfigParser()
+        CONFIG.read('tele.conf')
+        BOT_TELE = CONFIG.get('config', 'BOT_TELE')
+        CHAT_ID = CONFIG.get('config', 'CHAT_ID')
+        LOGGER.info('Gửi thông báo qua telegram')
+        tele_url = f'https://api.telegram.org/bot{BOT_TELE}/sendMessage'
+        params = {
+            'chat_id': CHAT_ID,
+            'text': f'Chạy tool auto: {THOI_GIAN_HIEN_TAI}',
+        }
+        requests.post(url=tele_url, data=params)
     DRIVER = None
 
     try:
