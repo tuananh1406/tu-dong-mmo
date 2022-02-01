@@ -49,7 +49,7 @@ def thiet_lap_logging(name):
     ])
     formatter = logging.Formatter(log_format)
     file_handles = logging.FileHandler(
-        filename='logs.txt',
+        filename='%s.log' % (THOI_GIAN_HIEN_TAI.strftime("%d-%m-%Y")),
         mode='a',
         encoding='utf-8',
     )
