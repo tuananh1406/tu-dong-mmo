@@ -123,7 +123,7 @@ if __name__ == '__main__':
     LOGGER = thiet_lap_logging(NAME)
     LOGGER.info('Chạy chương trình')
 
-    if os.path.isexists('tele.conf'):
+    if os.path.exists('tele.conf'):
         LOGGER.info('Load config')
         CONFIG = ConfigParser()
         CONFIG.read('tele.conf')
