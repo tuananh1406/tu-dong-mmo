@@ -30,7 +30,7 @@ class CustomLogFilter(logging.Filter):
 EXTRA = dict(cookies_name=None)
 TESTING = None
 # URL = 'https://gleam.io/L8Tok/lixinft-giveaway'
-URL = 'https://share-w.in/hq1d4a-47546'
+URL = 'https://gleam.io/Q7ugC/horizon-protocol-bounty-campaign?gsr=Q7ugC-zXAu0tTn10'
 NAME = 'tool_auto'
 
 
