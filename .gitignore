@@ -2,3 +2,4 @@ tags
 *.log
 *.swp
 *.conf
+*.lock
